@@ -10,7 +10,7 @@ const ImageSmaple: NextPage<void> = (props) => {
             <p>imgタグ</p>
             <img src="/images/sample.jpg" />
             <p>Imageコンポーネント</p>
-            <Image src={SmpleImage} alt=""/>
+            <Image src={SmpleImage} alt="" layout='responsive' placeholder='blur'/>
             <p>Imageで表示した場合は事前に描画エリアが確保されます</p>
         </div>
     )
