@@ -24,6 +24,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     console.log('process.env.NEXT_PUBLIC_TEST', process.env.NEXT_PUBLIC_TEST)
 
     return {
+        
         props: {},
     }
 }
