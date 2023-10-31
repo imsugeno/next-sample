@@ -1,36 +1,25 @@
-import { ComponentMeta, Story } from '@storybook/react'
-import { StyledButton, StyledButtonProps } from '../components/StyledButton'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { StyledButton } from '../components/StyledButton'
 
-// ファイル内のStoryの設定（メタデータオブジェクト）
 export default {
-  // グループ名
-  title: 'StyledButton',
-  // 使用するコンポーネント
-  component: StyledButton,
-  // onClickが呼ばれた時にclickedというactionを呼び出す
-  argTypes: { onClick: { action: 'clicked' } },
+    title: "StyledButton",
+    component: StyledButton,
+    argTypes: {
+        variant: {
+            control: { type: 'radio' },
+            options: ['primary', 'success', 'transparent'],
+        },
+        children: {
+            control: { type: 'text' },
+        },
+    },
 } as ComponentMeta<typeof StyledButton>
 
-export const Primary: Story<StyledButtonProps> = (props) => {
-  return (
-    <StyledButton {...props} variant="primary">
-      Primary
-    </StyledButton>
-  )
-}
+const Template: ComponentStory<typeof StyledButton> = (args) => <StyledButton {...args} />
 
-export const Success: Story<StyledButtonProps> = (props) => {
-  return (
-    <StyledButton {...props} variant="success">
-      Primary
-    </StyledButton>
-  )
-}
+export const TemplateTest = Template.bind({})
 
-export const Transparent: Story<StyledButtonProps> = (props) => {
-  return (
-    <StyledButton {...props} variant="transparent">
-      Transparent
-    </StyledButton>
-  )
+TemplateTest.args = {
+    variant: 'primary',
+    children: 'Primary',
 }
