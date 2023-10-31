@@ -1,9 +1,15 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { StyledButton } from '../components/StyledButton'
+import MDXDocument from './StyledButton.mdx'
 
 export default {
     title: "StyledButton",
     component: StyledButton,
+    parameters: {
+        docs: {
+            page: MDXDocument,
+        },
+    },
     argTypes: {
         variant: {
             control: { type: 'radio' },
