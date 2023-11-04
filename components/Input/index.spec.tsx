@@ -1,4 +1,5 @@
 import { render, screen, RenderResult } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { Input } from './index';
 
 describe('Input', () => {
